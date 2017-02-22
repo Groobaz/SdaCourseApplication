@@ -23,6 +23,7 @@ import android.widget.Toast;
 import com.hfad.sdacourseapplication.drawapp.DrawAppActivity;
 import com.hfad.sdacourseapplication.gallery.GalleryActivity;
 import com.hfad.sdacourseapplication.simpledrawgame.SimpleDrawingGameMainActivity;
+import com.hfad.sdacourseapplication.todoapp.ToDoActivity;
 
 import org.w3c.dom.Text;
 
@@ -32,11 +33,11 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.open);
@@ -47,6 +48,16 @@ public class MainActivity extends AppCompatActivity {
         TextView textViewDrawApp = (TextView) findViewById(R.id.draw_button);
         TextView textViewSimpleDrawGame = (TextView) findViewById(R.id.game_button);
         TextView textViewGallery = (TextView) findViewById(R.id.gallery_button);
+        TextView textViewToDo = (TextView) findViewById(R.id.todo_list_application);
+
+        textViewToDo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ToDoActivity.class);
+                startActivity(intent);
+            }
+        });
+
         textViewDrawApp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
