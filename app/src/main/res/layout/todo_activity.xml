@@ -27,7 +27,7 @@
         <Button
             android:layout_weight="0.2"
             android:width="0dp"
-            android:id="@+id/todo_button"
+            android:id="@+id/todo_add_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ADD"/>
